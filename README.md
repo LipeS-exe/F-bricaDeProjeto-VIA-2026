@@ -93,6 +93,11 @@ Desenvolver uma plataforma web que permita:
 
 - Trello
 
+### Como Instalar 
+
+* Git Clone https://github.com/LipeS-exe/F-bricaDeProjeto-VIA-2026.git
+* npm install
+
 ## Licença
 
 Projeto acadêmico desenvolvido para fins educacionais.
