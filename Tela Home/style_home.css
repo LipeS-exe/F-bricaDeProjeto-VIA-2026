@@ -1,0 +1,291 @@
+/* ================= FONTES ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@font-face {
+    font-family: "Greenth";
+    src: url("assets/Greenth.ttf") format("truetype");
+}
+
+/* ================= VARIÁVEIS E BASE ================= */
+:root {
+    /* Fundo Escuro: Radial degrade solicitado */
+    --bg-color: radial-gradient(circle at center, #3D3D3D 0%, #1F1F1F 50%, #000 100%);
+    --header-bg: #000000;
+    --text-color: #ffffff; /* Texto geral em branco */
+    --logo-text-color: #ffffff; /* VIA do logo em branco puro */
+    --watermark-color: #ffffff; /* VIA gigante em branco puro */
+    --watermark-opacity: 0.80; /* Baixa opacidade para o VIA gigante */
+    --subtext-color: rgba(255, 255, 255, 0.7);
+    --gradient-verde: linear-gradient(90deg, #25D9B8, #3ADF81);
+    --accent-color: #25D9B8;
+    --divider-color: var(--gradient-verde);
+}
+
+.light-mode {
+    /* Fundo Claro: Gradiente verde */
+    --bg-color: linear-gradient(90deg, #25D9B8, #3ADF81);
+    --header-bg: #ffffff;
+    --text-color: #363636;
+    --logo-text-color: #363636; /* VIA do logo em cinza */
+    --watermark-color: #ffffff; /* VIA gigante em cinza */
+    --watermark-opacity: 0.80; /* Opacidade um pouco maior no claro */
+    --subtext-color: #363636;
+    --accent-color: #ffffff; 
+    --divider-color: #363636;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: background 0.4s, background-color 0.4s, color 0.4s;
+}
+
+body {
+    background: var(--bg-color);
+    background-attachment: fixed;
+    color: var(--text-color);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--header-bg);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: "Greenth", sans-serif;
+    font-size: 35px;
+    letter-spacing: 2px;
+    color: var(--logo-text-color); /* Usa a variável específica */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+nav a.active, nav a:hover {
+    opacity: 1;
+    color: #25D9B8;
+}
+
+.light-mode nav a.active, .light-mode nav a:hover {
+    color: #25D9B8;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background: var(--divider-color);
+}
+
+/* ================= THEME SWITCH ================= */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient-verde);
+    padding: 5px 15px;
+    border-radius: 12px;
+    color: #000;
+    font-weight: 600;
+}
+
+.light-mode .theme-switch-wrapper {
+    background: #363636;
+    color: #fff;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 40px;
+}
+
+.theme-switch input { display: none; }
+
+.slider {
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: #fff;
+    content: "";
+    height: 14px; width: 14px;
+    left: 4px; bottom: 3px;
+    position: absolute;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* ================= HERO CONTENT ================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 8%;
+    min-height: 80vh;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-title {
+    font-family: "Greenth", sans-serif;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+#verde {
+    background: var(--gradient-verde);
+     background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.light-mode #verde {
+    background: none;
+    -webkit-text-fill-color: #ffffff; 
+}
+
+.hero-description {
+    max-width: 500px;
+    font-size: 18px;
+    color: var(--subtext-color);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.btn-comecar {
+    background: var(--gradient-verde);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.light-mode .btn-comecar {
+    background: #363636;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ================= HERO RIGHT ================= */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Para controlar o z-index da watermark */
+}
+
+.main-illustration {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.2));
+    position: relative;
+    z-index: 2; /* Garante que a imagem fique na frente da watermark */
+}
+
+.watermark-via {
+    margin-top: -30px;
+    font-family: "Greenth", sans-serif;
+    font-size: clamp(80px, 10vw, 150px);
+    line-height: 1;
+    color: var(--watermark-color); /* Usa variável específica */
+    opacity: var(--watermark-opacity); /* Usa variável específica */
+    text-align: center;
+    user-select: none;
+    position: absolute; /* Sobrepõe a imagem */
+    bottom: -20px; /* Ajuste fino de posição */
+    z-index: 1; /* Fica atrás da imagem */
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 1024px) {
+    .hero { 
+        flex-direction: column; 
+        text-align: center; 
+        padding-top: 40px;
+    }
+    .hero-right { margin-top: 50px; }
+    .stats { justify-content: center; }
+    .hero-description { margin: 0 auto 40px; }
+    .btn-comecar { margin: 0 auto; }
+}
