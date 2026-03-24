@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --font-principal: "Poppins", sans-serif;
+  --font-greenth: "Greenth";
+  --background-header: #232323;
+  --color-green: #36D98A;
+  --linear-gradient-button: linear-gradient(90deg,rgba(87, 199, 133, 1) 50%, rgba(98, 237, 83, 1) 100%);;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Greenth";
+    src: url("assets/Greenth.ttf") format("truetype");
+}
+
+/* Corpo do site */
+body {
+    color: white;
+    font-family: var(--font-principal);
+    font-weight: 600;
+    background-color: black;
+}
+
+/*========== HEADER SITE ==========*/
+
+header {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: var(--background-header);
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* lista do header */
+header ul {
+    display: flex;
+    list-style: none;
+}
+
+header ul li {
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+header ul li:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+    color: var(--color-green);
+}
+
+/* logo do site */
+h1 {
+    font-family: var(--font-greenth);
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-via {
+    width: 150px;
+}
+
+
+/* button modo-escuro/claro */
+#button-mec {
+    background: var(--linear-gradient-button);
+    width: 200px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-family: var(--font-principal);
+    font-weight: 600;
+}
+
+#button-mec:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.moon {
+    margin: 0 10px;
+    color: yellow;
+}
+
+/* Linha header */
+hr {
+    width: 100%;
+    height: 10px;
+    background-color: var(--color-green);
+    border: none;
+}
+
+/*========== BODY SITE ==========*/
+
+.sobre {
+    display: flex;
+    margin: 80px 20px;
+}
+
+/* Texto das informações */
+.text-info {
+    margin-right: 0px;
+}
+
+.text-info h2 {
+    font-family: var(--font-greenth);
+    font-size: 50px;
+    text-decoration: underline var(--color-green);
+}
+
+.text-verde {
+    color: var(--color-green);
+}
+
+.text-info p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/*========== FOOTER SITE ==========*/
+footer {
+    background-color: var(--background-header);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    margin: 0 10px;
+}
+
+/* footer lista (contatos e suporte) */
+footer ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+footer ul li {
+    transition: .3s;
+}
+
+footer ul li:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+/* footer imagem */
+footer img {
+    width: 200px;
+}
