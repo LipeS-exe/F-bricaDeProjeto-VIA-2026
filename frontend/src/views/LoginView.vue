@@ -22,7 +22,9 @@ const isLogin = ref(true);
             <div class="facaLogin">
                 <h2>POSSUI UMA <br><span id="verde">CONTA</span>?</h2>
                 <p>Realize seu login</p>
+                <!-- <RouterLink to="/home"> -->
                 <button class="loginButton" @click="isLogin = true">LOGIN</button>
+                <!--</RouterLink> -->
             </div>
         </div>
 
